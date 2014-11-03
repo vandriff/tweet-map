@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<head>
+<title> ATX the Music Capital?</title>
+<link type="text/css" rel="stylesheet" href="style.css" media="all" />
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <script>
+
+     var map;
+
+     function makeMap(lat, long) {
+       var latlng = new google.maps.LatLng(lat, long);
+       var options = {
+         zoom: 8,
+         center: latlng, styles: [{"featureType":"water","elementType":"all","stylers":[{"hue":"#71d6ff"},{"saturation":100},{"lightness":-5},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":0},{"lightness":100},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#deecec"},{"saturation":-73},{"lightness":72},{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"hue":"#bababa"},{"saturation":-100},{"lightness":25},{"visibility":"on"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"hue":"#e3e3e3"},{"saturation":-100},{"lightness":0},{"visibility":"on"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"simplified"}]},{"featureType":"administrative","elementType":"labels","stylers":[{"hue":"#59cfff"},{"saturation":100},{"lightness":34},{"visibility":"on"}]}]
+       };
+
+       map = new google.maps.Map(document.getElementById("map"), options);
+     }
+
+     function printCoords() {
+       num_coords = $('table tbody tr').length
+       var cTable = document.getElementById("cTable")
+       for (i = 0; i < num_coords; i++)
+         lng = cTable.rows[i].cells[0].textContent
+         lat = cTable.rows[i].cells[1].textContent
+        document.write(lat + "\t, " + lng + "\n")
+     }					  
+
+	 var pinImage = new google.maps.MarkerImage("music_marker.png");
+	 
+	 
+     function placeMarkers() {
+       num_coords = $('table tbody tr').length
+       var cTable = document.getElementById("cTable")
+       for (i = 0; i < num_coords; i++) {
+         lng = cTable.rows[i].cells[0].textContent
+         lat = cTable.rows[i].cells[1].textContent
+	 text = cTable.rows[i].cells[2].textContent
+         var myLatlng = new google.maps.LatLng(lat,lng);
+
+	 var marker = new google.maps.Marker({
+	   position: myLatlng,
+	   map: map,
+	   icon: pinImage, 
+	   title: text
+	 });
+       }
+     }					  
+
+
+   $(document).ready(function () {
+     $('#cTable').hide()
+     
+     makeMap(30, -97)
+     placeMarkers()
+
+   });
+
+  </script>
+</head>
+
+
+
+<body>
+
+<center><h1>Is Austin, Texas THE Musical Capital of the World?</h1></center>
+
+<div id = "map" style="height: 300px"></div></div><table id = "cTable">
+<tr id = "coord0">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>Get your #hands up for #beck @ #ACLfest 10.10.14 - #drawing #austin #music #festival #sketching #aclâ€¦ http://t.co/IgHaEp6UvY</td>
+</tr>
+<tr id = "coord1">
+<td id = "lng">-97.745209</td><td id = "lat">30.268735</td>
+<td>Austin Music Source thumbnail http://t.co/V6qqBrymW8</td>
+</tr>
+<tr id = "coord2">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>Had a blast at BASSNECTAR ðŸ’–ðŸŽ¶ðŸ“£ðŸ‘¯ #latergram #weekender #bestie @ Austin Music Hall http://t.co/eBupIpGAqU</td>
+</tr>
+<tr id = "coord3">
+<td id = "lng">-7.3268018</td><td id = "lat">55.0360886</td>
+<td>@rossR5 please follow me . I love ur music on Austin and Ally and R5,ðŸ˜ http://t.co/zQZnky6KPq</td>
+</tr>
+<tr id = "coord4">
+<td id = "lng">-98.52623963</td><td id = "lat">29.57891244</td>
+<td>@MTV I want more on Austin Mahones new music</td>
+</tr>
+<tr id = "coord5">
+<td id = "lng">-97.7473572</td><td id = "lat">30.2228447</td>
+<td>Movin' It Studios #Music #Job: Fitness Dance Instructor and Choreographer (#Austin, TX) http://t.co/aGTCkwdSrs #Jobs #TweetMyJobs</td>
+</tr>
+<tr id = "coord6">
+<td id = "lng">-86.10138406</td><td id = "lat">39.76083197</td>
+<td>I mean I like a lot of music but I â¤ï¸ thrash</td>
+</tr>
+<tr id = "coord7">
+<td id = "lng">-86.10138406</td><td id = "lat">39.76083197</td>
+<td>I mean I like a lot of music but I â¤ï¸ thrash</td>
+</tr>
+<tr id = "coord8">
+<td id = "lng">-95.54441898</td><td id = "lat">29.776629</td>
+<td>WE ARE OPEN ALL WEEKEND FOR AUSTIN BEER WEEK!!
+10/26 - Sunday Tours &amp; Tasting 1-5pm
+Music: Ian Sunrise Wolfe
+Food: BBQ By Kyle</td>
+</tr>
+<tr id = "coord9">
+<td id = "lng">-95.54417514</td><td id = "lat">29.776653</td>
+<td>WE ARE OPEN ALL WEEKEND FOR AUSTIN BEER WEEK!!
+10/26 - Sunday Tours &amp; Tasting 1-5pm
+Music: Ian Sunrise Wolfe
+Food: Brown Bag It!</td>
+</tr>
+<tr id = "coord10">
+<td id = "lng">-97.77834177</td><td id = "lat">30.24582363</td>
+<td>Fueling up before the studio session! #music (@ Maria's Taco Xpress in Austin, TX) https://t.co/MmueNkRhpX</td>
+</tr>
+<tr id = "coord11">
+<td id = "lng">27.98557</td><td id = "lat">-26.0014</td>
+<td>Patti Austin - Butterfly (You Send Me) (Louie Vega Re-Edit)  http://t.co/IYr7l3p4gS</td>
+</tr>
+<tr id = "coord12">
+<td id = "lng">27.98569</td><td id = "lat">-26.00159</td>
+<td>MAW Feat. Patti Austin - Like A Butterfly (You Send It)  http://t.co/Qfy7rj1zLD</td>
+</tr>
+<tr id = "coord13">
+<td id = "lng">-76.9909044</td><td id = "lat">-12.1065473</td>
+<td>I WAS SINGING ALONG WITH THE MUSIC AND I WAS LIKE MMM MMM YEAH YEAH AND I SAID TO MY FRIENDS ITS FUCKING AUSTIN ITS AUSTIN AND THEY LAUGHED</td>
+</tr>
+<tr id = "coord14">
+<td id = "lng">-73.7879279</td><td id = "lat">45.5298526</td>
+<td>Stone Cold Steve Austin Theme Song Download: http://t.co/OmuHbsG48q hit my music pussy @derek8poker</td>
+</tr>
+<tr id = "coord15">
+<td id = "lng">-97.74412569</td><td id = "lat">30.26660389</td>
+<td>Sometimes I cant believe where I am. All the times and places. I break my mother in Austin. Music and bike-pulley systems. Burlesque venues.</td>
+</tr>
+<tr id = "coord16">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>Bassnectar ðŸ’˜ @ Austin Music Hall http://t.co/Ul4zsEto5f</td>
+</tr>
+<tr id = "coord17">
+<td id = "lng">-90.4811058</td><td id = "lat">14.650769</td>
+<td>@music_ama https://t.co/6qb6cHUvFU dale RT al link porfavor ðŸ˜ŠðŸ˜Š es para conocer a Austin/ give RT to the link</td>
+</tr>
+<tr id = "coord18">
+<td id = "lng">-97.74361687</td><td id = "lat">30.26960519</td>
+<td>Local Nonprofit Celebrates Dia de los Muertos: People listened to live music, got their faces painted and triedâ€¦ http://t.co/6ytmv5Sju5</td>
+</tr>
+<tr id = "coord19">
+<td id = "lng">-97.72836641</td><td id = "lat">30.26910102</td>
+<td>There seems to be live music on every street in #austin #texas @ Kenny Dorham's Back Yard http://t.co/ntNcwOwbv0</td>
+</tr>
+<tr id = "coord20">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>Epic x BASSHEAD @ Austin Music Hall http://t.co/xhXklFcMUu</td>
+</tr>
+<tr id = "coord21">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>A little Crazy Carl action with aythedp @ Austin Music Hall http://t.co/Cnp71xEfj9</td>
+</tr>
+<tr id = "coord22">
+<td id = "lng">-118.32665174</td><td id = "lat">34.09830769</td>
+<td>Guys, I don't think there are enough festivals in Austin. Let's start another music/ film/ sporting event, mmmmmkay? #austin</td>
+</tr>
+<tr id = "coord23">
+<td id = "lng">-97.76187098</td><td id = "lat">30.21517206</td>
+<td>Rehearsal time with Tommy, Chris and Russell (@ Music Lab St Elmo in Austin, TX) https://t.co/4ABmVhtrNl</td>
+</tr>
+<tr id = "coord24">
+<td id = "lng">-97.71712155</td><td id = "lat">30.28383558</td>
+<td>The band is really good right now. #vortex #austin #music #handmade</td>
+</tr>
+<tr id = "coord25">
+<td id = "lng">-85.76624995</td><td id = "lat">34.70223957</td>
+<td>Like the great @austin_ac21 once said "there's just something about Fall Out Boys music that gets you pumped!"</td>
+</tr>
+<tr id = "coord26">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>Had a blast with bae @vivavics #bassnectar @ Austin Music Hall http://t.co/NxaewMpWq4</td>
+</tr>
+<tr id = "coord27">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>BASSNECTAR was off the chain @ Austin Music Hall http://t.co/wNy4iMagl4</td>
+</tr>
+<tr id = "coord28">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>ðŸ™Œ@bassnectar @ Austin Music Hall http://t.co/pnRQywiRmq</td>
+</tr>
+<tr id = "coord29">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>'Merica. â¤ï¸ðŸ‡ºðŸ‡¸ #bassnectar #america #twins @ Austin Music Hall http://t.co/fpQsAwPUX6</td>
+</tr>
+<tr id = "coord30">
+<td id = "lng">-97.69587624</td><td id = "lat">30.50723341</td>
+<td>#Music #Band #HighSchool #Rouse #Raiders #Football #Austin #Texas #EEUU @ Dragon Stadium http://t.co/xGVcNp7KxJ</td>
+</tr>
+<tr id = "coord31">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>TGIF ðŸŽ‰ @ Austin Music Hall http://t.co/HVk9iccIzK</td>
+</tr>
+<tr id = "coord32">
+<td id = "lng">-97.73859852</td><td id = "lat">30.25959622</td>
+<td>Live music @ the Blackheart #beers #rainystreet #Austin #atx @ The Blackheart http://t.co/G1njNiZF7j</td>
+</tr>
+<tr id = "coord33">
+<td id = "lng">-97.7386811</td><td id = "lat">30.26665533</td>
+<td>I'm at Majestic Music Hall and Bar in Austin, TX https://t.co/NSrcsjjzTt</td>
+</tr>
+<tr id = "coord34">
+<td id = "lng">-97.66679394</td><td id = "lat">30.20232866</td>
+<td>Helloooo Austin! Music City #2! @ Austin-Bergstrom International Airport http://t.co/HnVVVRCc93</td>
+</tr>
+<tr id = "coord35">
+<td id = "lng">-97.13299809</td><td id = "lat">33.21472944</td>
+<td>It's like a less hectic Austin with cheaper prices and better infrastructure, and like a mini Memphis with all the music that lives here ðŸ˜Œ</td>
+</tr>
+<tr id = "coord36">
+<td id = "lng">-97.70826418</td><td id = "lat">30.30991409</td>
+<td>@ #carousellounge #austin #music @ Carousel Lounge http://t.co/m7dPwsEucr</td>
+</tr>
+<tr id = "coord37">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>We've all been #RickRolled by @killparis @ Austin Music Hall http://t.co/EUPtKWjkcY</td>
+</tr>
+<tr id = "coord38">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>@killparis @ Austin Music Hall http://t.co/lWa6CqaNMD</td>
+</tr>
+<tr id = "coord39">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>Free floor wristbands for #bassnectar womp womp womp #fuckyobalcony @ Austin Music Hall http://t.co/PDVPcEW3xL</td>
+</tr>
+<tr id = "coord40">
+<td id = "lng">-97.74947663</td><td id = "lat">30.26680934</td>
+<td>BASSNECTAR ðŸ’–ðŸ“£ (@ Austin Music Hall for BASSNECTAR in Austin, TX) https://t.co/gZDavDbndg</td>
+</tr>
+<tr id = "coord41">
+<td id = "lng">-97.74947663</td><td id = "lat">30.26680934</td>
+<td>I'm at Austin Music Hall for BASSNECTAR in Austin, TX https://t.co/T8zu8mYcey</td>
+</tr>
+<tr id = "coord42">
+<td id = "lng">-97.74967397</td><td id = "lat">30.26684048</td>
+<td>Let the festivities begin! #SonOfKick @ Austin Music Hall http://t.co/IBbJroaClW</td>
+</tr>
+<tr id = "coord43">
+<td id = "lng">-97.74947663</td><td id = "lat">30.26680934</td>
+<td>I'm at Austin Music Hall for BASSNECTAR in Austin, TX w/ @sallykbradley https://t.co/Qg8yAQfJAB</td>
+</tr>
+<tr id = "coord44">
+<td id = "lng">-97.85789768</td><td id = "lat">30.59994546</td>
+<td>@SLN_Music @Shiners_Saloon downtown Austin tonight at 10:30 to 1:30 #austinfilmfest #texasmusicweekend #texanpoet http://t.co/2qQd9bnNrH</td>
+</tr>
+<tr id = "coord45">
+<td id = "lng">-76.9373795</td><td id = "lat">38.6124114</td>
+<td>@AreJackles @HeartDoc112 @Krilanna @abctrower @SouthernEnigma @AyaHassan3656 no wonder I love Deans musicðŸ˜‚</td>
+</tr>
+<tr id = "coord46">
+<td id = "lng">-97.74590397</td><td id = "lat">30.26972132</td>
+<td>@grantafterdark @LeDoom @yackogallagher @IAmMSCLS *austin music hall that is :)</td>
+</tr>
+<tr id = "coord47">
+<td id = "lng">-97.73406177</td><td id = "lat">30.27941528</td>
+<td>@LeDoom @yackogallagher @grantafterdark yeas lads. Gonna be hitting some rum and ginger beer near Austin music. Come thru!</td>
+</tr>
+<tr id = "coord48">
+<td id = "lng">-97.7279331</td><td id = "lat">30.23965105</td>
+<td>You can scratch Emo's of Austin off my list of great music venues. @ Emo's http://t.co/4PBQDy39Oe</td>
+</tr>
+<tr id = "coord49">
+<td id = "lng">-97.71467535</td><td id = "lat">30.2902118</td>
+<td>Mudphonic all stars do funks and musics at #Cboys. 1030pm, pause for the cause at high midnight. #austin #music http://t.co/X1s7MxdxMk</td>
+</tr>
+<tr id = "coord50">
+<td id = "lng">-98.52155542</td><td id = "lat">29.59251178</td>
+<td>Cannot wait to turn up in ATX tonight for @bassnectar with @GratefulRaver @CescaDoll and every other beautiful person in Austin Music Hall</td>
+</tr>
+<tr id = "coord51">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>#drawing more @lanadelrey @ #ACLfest 10.11.14 - #drawing #austin #music #festival @ Austin City Limitsâ€¦ http://t.co/kvfg2RESaD</td>
+</tr>
+<tr id = "coord52">
+<td id = "lng">-97.7464902</td><td id = "lat">30.4086208</td>
+<td>Check out the newest HD music video from the Super Smash Bros, "Austin, Texas". http://t.co/wIuS2FZVN3  Shot in FULL HD at SXSW 2014</td>
+</tr>
+<tr id = "coord53">
+<td id = "lng">-98.11088681</td><td id = "lat">30.20138733</td>
+<td>â€œThe only truth is music.â€ 
+
+~ Jack Kerouac 
+
+www,http://t.co/Em8xMBJHKn @ Austin Texas http://t.co/kRzkQ2U31M</td>
+</tr>
+<tr id = "coord54">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>Ta coordinadas @mariannetc ðŸ‘¯ðŸ™ŠðŸ™ˆðŸ™‰âœŒï¸ðŸ‘ŒðŸ‘ðŸ‘ðŸ˜‚ #ACL #fbf @ Austin City Limits Music Festival (ACL) http://t.co/Hak7VVO2Lz</td>
+</tr>
+<tr id = "coord55">
+<td id = "lng">-97.463764</td><td id = "lat">35.304632</td>
+<td>Will someone who likes country music please listen to curtis grimes and tell me hes not the goat</td>
+</tr>
+<tr id = "coord56">
+<td id = "lng">-81.8368787</td><td id = "lat">26.48985853</td>
+<td>my family is always surprised when I listen to music with fuck or nigga in it lmfao</td>
+</tr>
+<tr id = "coord57">
+<td id = "lng">-97.73874475</td><td id = "lat">30.25964916</td>
+<td>Cocktails &amp; Live Music â€“ with Brian (@ The Blackheart in Austin, TX) https://t.co/M3yacEgSoQ</td>
+</tr>
+<tr id = "coord58">
+<td id = "lng">-97.73611771</td><td id = "lat">30.26858045</td>
+<td>live music in Austin ðŸ‡ºðŸ‡¸ @ Stubb's Austin http://t.co/JIzYIUiEs1</td>
+</tr>
+<tr id = "coord59">
+<td id = "lng">-117.17068009</td><td id = "lat">33.714809</td>
+<td>â€œ@JackAssVine: RT if this man's music has touched your heart. https://t.co/HWPhdZgxDZâ€ @AUSTIN_ANDERS_</td>
+</tr>
+<tr id = "coord60">
+<td id = "lng">-76.59691926</td><td id = "lat">39.27914721</td>
+<td>Guess it's never too early for Christmas music while being put on hold</td>
+</tr>
+<tr id = "coord61">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>One more from #eminem @ #ACLfest 10.11.14 - #drawing #austin #music #festival #acl #atx #moleskineâ€¦ http://t.co/LcvyvRLTLR</td>
+</tr>
+<tr id = "coord62">
+<td id = "lng">-97.93971246</td><td id = "lat">29.88976043</td>
+<td>Can @Ansolo_Music music come to Austin, Texas and do a show so me and @happyhourhaley can melt?ðŸ”¥</td>
+</tr>
+<tr id = "coord63">
+<td id = "lng">-85.61498502</td><td id = "lat">42.28060014</td>
+<td>Zeppelin is and forever will be perfect pre-class music.</td>
+</tr>
+<tr id = "coord64">
+<td id = "lng">-97.7472944</td><td id = "lat">30.26536441</td>
+<td>Ryan Adams tonight at ACL Live. âœŒï¸#austin #music @ ACL Live http://t.co/MvNT5pRc80</td>
+</tr>
+<tr id = "coord65">
+<td id = "lng">-97.73775019</td><td id = "lat">30.26655241</td>
+<td>ðŸŽ¼ðŸŽ¶ðŸŽ¶ Feeling Irie.... ðŸ˜Ž #Reggae #Music #LiveMusic #Austin @ Flamingo Cantina http://t.co/VlYHbbl8NL</td>
+</tr>
+<tr id = "coord66">
+<td id = "lng">-97.73827091</td><td id = "lat">30.2667759</td>
+<td>Necessity. #dashboardjesus #tourlife #van #itsthesmallthings #protected #love #cityoftheweak #austin #life #music http://t.co/hzdi6oLL31</td>
+</tr>
+<tr id = "coord67">
+<td id = "lng">-97.720123</td><td id = "lat">30.273854</td>
+<td>Share something real! At the Badlands, 1203 Chicon for @Femm_Artist's Real Talk open mike. Come perform! #Austin #poetry #music</td>
+</tr>
+<tr id = "coord68">
+<td id = "lng">-85.72516372</td><td id = "lat">38.24107828</td>
+<td>Hello Austin...for real..live music, bar games, young crowd..feels like home. (at @Baxters942 in Louisville, KY) http://t.co/y09axrNSSF</td>
+</tr>
+<tr id = "coord69">
+<td id = "lng">-87.8336611</td><td id = "lat">41.97863423</td>
+<td>I'm ready for new music from Austin right now!!! @AustinMahone @blumsteinmike @Robert15Jgod</td>
+</tr>
+<tr id = "coord70">
+<td id = "lng">-70.2698721</td><td id = "lat">44.0419156</td>
+<td>"Real people want real music, the jig is up"</td>
+</tr>
+<tr id = "coord71">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>Out at the #crows @ #ACLfest 10.12.14 - #drawing @aclfestival #austin #music #sketchingâ€¦ http://t.co/g4vqV3y5eB</td>
+</tr>
+<tr id = "coord72">
+<td id = "lng">-76.9374342</td><td id = "lat">38.6124867</td>
+<td>@AreJackles @HeartDoc112 @Krilanna that cheesy music boom chikka pow pow cracks me up!</td>
+</tr>
+<tr id = "coord73">
+<td id = "lng">-97.72686213</td><td id = "lat">30.24155242</td>
+<td>The meeting was a success! Awesome guys!
+#myteam #atx #atxmusic #music #masterminds #austin #austintxâ€¦ http://t.co/ae5Nbw7Wzo</td>
+</tr>
+<tr id = "coord74">
+<td id = "lng">-97.66778404</td><td id = "lat">30.20256835</td>
+<td>Live music and the smell of brisket as soon as you step off the plane. Austin, it's been too long.</td>
+</tr>
+<tr id = "coord75">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>eminem @aclfestival 10.11.14 - #drawing #austin #ACLfest #music #festival #sketching #moleskine #artâ€¦ http://t.co/UlutEpsTSv</td>
+</tr>
+<tr id = "coord76">
+<td id = "lng">-97.6455345</td><td id = "lat">30.1663851</td>
+<td>#Austin is a cool town. #music #tech  #Texas #AUS</td>
+</tr>
+<tr id = "coord77">
+<td id = "lng">-97.74116504</td><td id = "lat">30.26369654</td>
+<td>Drinks with the fellas. #atx #selfie #friends #austintx #austin #texas #atxmusic #music @ Craveâ€¦ http://t.co/V0zk51dN0k</td>
+</tr>
+<tr id = "coord78">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>Sup #mrporter - eminem @ #ACLfest 10.11.14 - #drawing #austin #music #rap #rapper #hiphop #moleskineâ€¦ http://t.co/ksmxAcTim0</td>
+</tr>
+<tr id = "coord79">
+<td id = "lng">-97.6881475</td><td id = "lat">30.3534947</td>
+<td>@ShazamRyder come to austin be a barista and play music at open mic nights with me.</td>
+</tr>
+<tr id = "coord80">
+<td id = "lng">-97.74361687</td><td id = "lat">30.26960519</td>
+<td>SXSW music festival lineup announced: AUSTIN (KXAN) â€“ While the return of SXSW isnâ€™t until next year, the initialâ€¦ http://t.co/roixmDjhaS</td>
+</tr>
+<tr id = "coord81">
+<td id = "lng">-71.06700513</td><td id = "lat">42.44981412</td>
+<td>Great review from http://t.co/UoUEqeZZBw from Saturday @Brighton_Music http://t.co/zlAbEK3CgI @christacoo @DaveAustinSound @GoodAmRadio</td>
+</tr>
+<tr id = "coord82">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>#WCW love you sista lkrengel86 ðŸ’œâ¤ï¸ @ Austin City Limits Music Festival (ACL) http://t.co/1bSv3c5m1W</td>
+</tr>
+<tr id = "coord83">
+<td id = "lng">0.0</td><td id = "lat">0.0</td>
+<td>@dream925fm Austin did no say killed, he said 'CHILLED' with his girlfriend makes him fine when his down . . . To me, its music! &lt;Ubong&gt;</td>
+</tr>
+<tr id = "coord84">
+<td id = "lng">-97.77695855</td><td id = "lat">35.62864567</td>
+<td>Shout out JP, Jack and Woodland Labs for the session. New music coming soon</td>
+</tr>
+<tr id = "coord85">
+<td id = "lng">-73.6696719</td><td id = "lat">-40.5843345</td>
+<td>@UMusicChile POR FAVOR U MUSIC QUUERO Y NECESITO GANAR EL MEET ... PORFAVOOR AMO A AUSTIN MAHONE #AUSTINMAHONECHILE</td>
+</tr>
+<tr id = "coord86">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>More @lanadelrey @aclfestival 10.11.14 - #drawing #ACLfest #austin #music #festival #sketching #art @â€¦ http://t.co/BwbVNwtGEY</td>
+</tr>
+<tr id = "coord87">
+<td id = "lng">-97.77638074</td><td id = "lat">35.62858101</td>
+<td>Studio session tonight. New music coming</td>
+</tr>
+<tr id = "coord88">
+<td id = "lng">-97.74361687</td><td id = "lat">30.26960519</td>
+<td>Purchase could bring the music back to Austin Music Hall: Cielo Property Group's recent acquisition of the Austinâ€¦ http://t.co/RonUbTj0MJ</td>
+</tr>
+<tr id = "coord89">
+<td id = "lng">-121.14303459</td><td id = "lat">38.65646743</td>
+<td>Austin watches Spanish music videos in his spare time and I'm not sure what to think of that.</td>
+</tr>
+<tr id = "coord90">
+<td id = "lng">-121.14303459</td><td id = "lat">38.65646743</td>
+<td>Austin watches Spanish music videos in his spare time and I'm not sure what to think of that.</td>
+</tr>
+<tr id = "coord91">
+<td id = "lng">-77.93322712</td><td id = "lat">34.23748225</td>
+<td>â€œ@Lindseyyeltonn: When ppl interpret nerd day as brittney spears music video slutty school girl day :/â€ @Eleanoooorr @lillimackay</td>
+</tr>
+<tr id = "coord92">
+<td id = "lng">-97.61152182</td><td id = "lat">30.81161838</td>
+<td>Austin! We play @BlackheartBar TONIGHT at 9:15!!!! @coldcockwhiskey #attitudeadjustment #butcherbabies #texas #ebola #fun #tour #cotw #music</td>
+</tr>
+<tr id = "coord93">
+<td id = "lng">-97.78428633</td><td id = "lat">30.29553438</td>
+<td>So, here's Austin: A DJ does music stuff in his mobile studio while a coupla fellas fish. @ Mozart'sâ€¦ http://t.co/xKFwpa9slL</td>
+</tr>
+<tr id = "coord94">
+<td id = "lng">-97.75964533</td><td id = "lat">30.21681355</td>
+<td>Just had a great practice at the Music Lab in Austin &lt;3 Gonna do it again the next 2 days.</td>
+</tr>
+<tr id = "coord95">
+<td id = "lng">-83.71113255</td><td id = "lat">41.683981</td>
+<td>â€œ@BradRieger: Steve loves music; favorite song... Austin &amp; Ally's Upside Down http://t.co/lxJpMEDwW0â€ steeeve!!!!! @TonyElekonich</td>
+</tr>
+<tr id = "coord96">
+<td id = "lng">-81.83699424</td><td id = "lat">26.48995935</td>
+<td>been a while since I just laid back and listened to music</td>
+</tr>
+<tr id = "coord97">
+<td id = "lng">-97.74361687</td><td id = "lat">30.26960519</td>
+<td>JamFeed app looks to become 'Team Stream' of the music world: Seeking to tap into music fans' desire to keep upâ€¦ http://t.co/8Go8qmnXco</td>
+</tr>
+<tr id = "coord98">
+<td id = "lng">-96.49159493</td><td id = "lat">32.8387246</td>
+<td>Why is my phone deleting music??</td>
+</tr>
+<tr id = "coord99">
+<td id = "lng">-0.0946944</td><td id = "lat">51.5384567</td>
+<td>@Austin_Sucks @DimpleMahone his music is a one in a million get the fuck outer here and get a life</td>
+</tr>
+<tr id = "coord100">
+<td id = "lng">-0.094706</td><td id = "lat">51.5384503</td>
+<td>@iJever @AntiMahomie and of your on about Austin mahone he actually does write his own music , ever heard of all I ever need and say my name</td>
+</tr>
+<tr id = "coord101">
+<td id = "lng">28.0551</td><td id = "lat">-26.19314</td>
+<td>Austin martin music rick ross</td>
+</tr>
+<tr id = "coord102">
+<td id = "lng">-71.0822481</td><td id = "lat">42.34866813</td>
+<td>http://t.co/VVDff13obk    Sweet review of Saturdays show! #teamdaveaustin</td>
+</tr>
+<tr id = "coord103">
+<td id = "lng">-97.77767358</td><td id = "lat">30.21507695</td>
+<td>Hey matto483 is that the new Strymon Migas Pedal? #rehearsalfuel @ Austin Music Rooms http://t.co/ZH5bHGP3io</td>
+</tr>
+<tr id = "coord104">
+<td id = "lng">-122.23980518</td><td id = "lat">37.46759458</td>
+<td>Peep these guys if you like good musicðŸ˜Ž
+https://t.co/f76n58o7Mz</td>
+</tr>
+<tr id = "coord105">
+<td id = "lng">-85.61575595</td><td id = "lat">42.2806819</td>
+<td>Finding new (GOOD) music &gt;&gt;&gt;</td>
+</tr>
+<tr id = "coord106">
+<td id = "lng">120.9785752</td><td id = "lat">14.6546101</td>
+<td>"@austin_mml: Check out our new music video for our single Katy Perry! You get get the song on iTunes or jam onâ€¦ http://t.co/IVSwV7ecGi"</td>
+</tr>
+<tr id = "coord107">
+<td id = "lng">-97.69461962</td><td id = "lat">30.34616088</td>
+<td>I'm at KGSR Music Lounge in Austin, TX https://t.co/Lg6ZQxXyRY</td>
+</tr>
+<tr id = "coord108">
+<td id = "lng">-84.78144301</td><td id = "lat">43.59125647</td>
+<td>Music in the morning makes everything better</td>
+</tr>
+<tr id = "coord109">
+<td id = "lng">-97.73611771</td><td id = "lat">30.26858045</td>
+<td>@cej1124 #brandnew #music #stubbs #austin #atx @ Stubb's Austin http://t.co/DrKTlOxWj9</td>
+</tr>
+<tr id = "coord110">
+<td id = "lng">-73.976675</td><td id = "lat">40.7450158</td>
+<td>Public TV. Music. "Dierks Bentley and Friends" did a surprisingly good job; now it's Nine Inch Nails on Austin City Limits, which is working</td>
+</tr>
+<tr id = "coord111">
+<td id = "lng">-95.36107608</td><td id = "lat">29.74876336</td>
+<td>@twentyonepilots it's been real! can't wait for the music! |-/ Austin &amp; Houston were amazing! http://t.co/Z8w4Exq5Y7</td>
+</tr>
+<tr id = "coord112">
+<td id = "lng">-95.36107608</td><td id = "lat">29.74876336</td>
+<td>@twentyonepilots it's been real! can't wait for the music! |-/ Austin &amp; Houston were amazing! http://t.co/Z8w4Exq5Y7</td>
+</tr>
+<tr id = "coord113">
+<td id = "lng">-122.56413597</td><td id = "lat">47.8467464</td>
+<td>Me when Austin releases new music http://t.co/5P96gOq2xH</td>
+</tr>
+<tr id = "coord114">
+<td id = "lng">-97.3785766</td><td id = "lat">31.0932289</td>
+<td>The music on the radio is literally getting worse the closer we get to Austin</td>
+</tr>
+<tr id = "coord115">
+<td id = "lng">-96.6132516</td><td id = "lat">33.2009738</td>
+<td>*starts sad music*
+*lays in bed and sinks*
+*cries*
+And finally bed peaceðŸŒŒðŸŒ‘</td>
+</tr>
+<tr id = "coord116">
+<td id = "lng">-97.72722994</td><td id = "lat">30.26342937</td>
+<td>Hotel Vegas! Come out for some country music! #aaronmcdonnell #austin #eastaustin @ Hotel Vegas http://t.co/BcNRXYo2WD</td>
+</tr>
+<tr id = "coord117">
+<td id = "lng">-97.73604708</td><td id = "lat">30.26986863</td>
+<td>Day 2 of music filled weekend #echosmith #coolkids @ The Mohawk Austin http://t.co/IKY50TUXdd</td>
+</tr>
+<tr id = "coord118">
+<td id = "lng">-121.8448745</td><td id = "lat">39.7461315</td>
+<td>New Departure Date, Revised Route, Zak Austin Music  http://t.co/8XwfvWrwEL</td>
+</tr>
+<tr id = "coord119">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>#latergram but Thanks again for the amazing weekend! @aclfestival @ Austin City Limits Music Festivalâ€¦ http://t.co/TSvqGeZDNv</td>
+</tr>
+<tr id = "coord120">
+<td id = "lng">-97.74922065</td><td id = "lat">30.25100551</td>
+<td>Folk music on a patio in Austin South Congress - fantastic. @ Jo's Hot Coffee Good Food http://t.co/vvD0UZPQn0</td>
+</tr>
+<tr id = "coord121">
+<td id = "lng">-97.74361687</td><td id = "lat">30.26960519</td>
+<td>'Fall Into Music' Instrument Drive: If you haven't picked up your instrument in years, it may be a good time toâ€¦ http://t.co/wTozOktAFm</td>
+</tr>
+<tr id = "coord122">
+<td id = "lng">-83.00845889</td><td id = "lat">42.63073733</td>
+<td>Austin always show me the best music I swearðŸ˜ðŸ˜</td>
+</tr>
+<tr id = "coord123">
+<td id = "lng">-80.6735608</td><td id = "lat">35.3746957</td>
+<td>*blasting hard rock in my room*
+Mom: Austin this isn't really Sunday church music...</td>
+</tr>
+<tr id = "coord124">
+<td id = "lng">-113.8916452</td><td id = "lat">36.90784794</td>
+<td>I honestly don't know why Austin thinks he needs to blast his music so damn loud</td>
+</tr>
+<tr id = "coord125">
+<td id = "lng">-97.7386811</td><td id = "lat">30.26665533</td>
+<td>ðŸ˜›ðŸ˜›ðŸ˜›ðŸ˜› (@ Majestic Music Hall and Bar in Austin, TX) https://t.co/eFiW4ZXCpg</td>
+</tr>
+<tr id = "coord126">
+<td id = "lng">-78.95570537</td><td id = "lat">43.88422163</td>
+<td>Attention: Young Men. It would seem (from tonight's Austin City Limits) that you should at least PRETEND to enjoy the music of Ed Sheeran.</td>
+</tr>
+<tr id = "coord127">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>So fun! @ Austin City Limits Music Festival (ACL) http://t.co/W659Xmnj9J</td>
+</tr>
+<tr id = "coord128">
+<td id = "lng">-93.8763997</td><td id = "lat">45.0902541</td>
+<td>@rossR5 I listen your music alot man amazing but your middle name is girly name is Austin Monica moon</td>
+</tr>
+<tr id = "coord129">
+<td id = "lng">-97.76187098</td><td id = "lat">30.21517206</td>
+<td>We are too loud!! Lol! (@ Music Lab St Elmo in Austin, TX) https://t.co/kRbAaW6CoZ</td>
+</tr>
+<tr id = "coord130">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>#erasure meet and greet. Autographs. #fanboys @ Austin City Limits Music Festival (ACL) http://t.co/HgUbj5oWMi</td>
+</tr>
+</table>
+</br>
+</br>
+<center><b>Austin, Texas</b> is known world-wide for the music that not only comes from the region but travels through.  Is this alone, enough for the location to continue to tout itself as the "music capital" of the world though? </br>
+The map up above shows a map of the geographic locations pulled for people on Twitter using the terms "Austin" and "music" together in the same tweet.  We can see many locations pop-up in the Central Texas region, of course, and surprisingly also quite a few going up into the northeast of the country.  However, we don't tend to see a large amount of references outside of the country.  It would probably make more sense for a place that is to be considered the "captial" of all live music around the globe to be referenced when discussing music a little more on one of the largest social media platforms there is.
+</body>
+

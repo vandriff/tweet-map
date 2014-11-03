@@ -1,0 +1,77 @@
+body {
+font-family: Helvetica;
+font-size: 16px;
+background-image: url('small_steps.png');
+background-repeat: repeat;
+}
+
+#main{
+border: 3px solid black;
+overflow: auto;
+padding: 10px;
+margin-top: 10px;
+margin-left: auto;
+margin-right: auto;
+width: 80%;
+background-color: #F2F2F2;
+}
+
+#abovemain{
+margin-left: auto;
+margin-right: auto;
+width: 80%;
+}
+
+#cat {
+text-align: center;
+color: #8A1931;
+margin-bottom: 10px;
+}
+
+#catdata {
+text-align: left;
+margin-left: auto;
+margin-right: auto;
+width: 80%;
+}
+
+#catdata h1 {
+text-align: center;
+}
+
+.bars {
+border: 2px solid;
+border-color: #8A1931;
+background-image: url('pix.png');
+background-repeat: repeat;
+width: 300px;
+height: 35px;
+-webkit-transition:width 1s ease-in;
+-moz-transition:width 1s ease-in;
+-o-transition:width 1s ease-in;
+transition:width 1s ease-in;
+margin-bottom: 5px;
+}
+
+
+#bar0 {
+width: 832px;
+} 
+#bar1 {
+width: 777px;
+}
+#bar2 {
+width: 236px;
+}
+.number {
+color: white;
+float: right; 
+font-size: 14px;
+margin: 9px 5px;
+}
+
+.name {
+color: black;
+font-size: 14px;
+margin: 9px 0 0 5px;
+}
